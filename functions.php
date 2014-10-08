@@ -1,6 +1,8 @@
 <?php
 require_once('wp_bootstrap_navwalker.php');
 
+include('widgets/widget-recent.php');
+
 register_nav_menu( 'primary', 'Primary Menu' );
 
 add_theme_support( 'post-thumbnails' );
@@ -52,3 +54,20 @@ if ( ! function_exists( 'refuge_paging_nav' ) ) :
 		<?php
 	}
 endif;
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function dukay_widgets_init() {
+
+	register_sidebar( array(
+		'name' => 'Left sidebar',
+		'id' => 'left_1',
+		'before_widget' => '<div class="panel panel-default">',
+		'after_widget' => '</div></div>',
+		'before_title' => '<div class="panel-heading"><h2 class="panel-title">',
+		'after_title' => '</h2></div><div class="panel-body">',
+	) );
+}
+add_action( 'widgets_init', 'dukay_widgets_init' );

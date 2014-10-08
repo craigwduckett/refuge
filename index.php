@@ -18,6 +18,7 @@ get_header(); ?>
 	<div class="row">
 		<div id="content" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 			<div class="columns">
+			<?php query_posts ($query_string . '&cat=2'); ?>
 				<?php if ( have_posts() ) : ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 						<?php get_template_part( 'content', get_post_format() ); ?>
