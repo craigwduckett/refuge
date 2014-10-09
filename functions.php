@@ -2,6 +2,8 @@
 require_once('wp_bootstrap_navwalker.php');
 
 include('widgets/widget-recent.php');
+include('widgets/widget-facebook-box.php');
+include('widgets/widget-donate.php');
 
 register_nav_menu( 'primary', 'Primary Menu' );
 
@@ -15,9 +17,9 @@ function refuge_excerpt_length($length) {
     return 100;
 }
 add_filter('excerpt_length', 'refuge_excerpt_length');
- 
+
 /* Add a link  to the end of our excerpt contained in a div for styling purposes and to break to a new line on the page.*/
- 
+
 function refuge_excerpt_more($more) {
     global $post;
 	return '<div class="row"><div class="col-lg-12"><a class="btn btn-readmore btn-lg btn-block" href="'. get_permalink($post->ID) . '">Continue reading...</a></div></div>';
@@ -67,7 +69,7 @@ function dukay_widgets_init() {
 		'before_widget' => '<div class="panel panel-default">',
 		'after_widget' => '</div></div>',
 		'before_title' => '<div class="panel-heading"><h2 class="panel-title">',
-		'after_title' => '</h2></div><div class="panel-body">',
+		'after_title' => '</h2></div>',
 	) );
 }
 add_action( 'widgets_init', 'dukay_widgets_init' );
