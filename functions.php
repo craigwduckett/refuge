@@ -2,7 +2,7 @@
 require_once('wp_bootstrap_navwalker.php');
 
 include('widgets/widget-recent.php');
-include('widgets/widget-facebook-box.php');
+include('widgets/widget-donate-box.php');
 include('widgets/widget-donate.php');
 
 register_nav_menu( 'primary', 'Primary Menu' );
