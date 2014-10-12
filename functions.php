@@ -1,8 +1,10 @@
 <?php
 require_once('wp_bootstrap_navwalker.php');
 
+include('theme-options.php');
+
 include('widgets/widget-recent.php');
-include('widgets/widget-donate-box.php');
+include('widgets/widget-facebook-box.php');
 include('widgets/widget-donate.php');
 
 register_nav_menu( 'primary', 'Primary Menu' );
@@ -12,6 +14,15 @@ add_theme_support( 'post-thumbnails' );
 add_image_size( 'sidebar-thumb', 120, 120, true ); // Hard Crop Mode
 add_image_size( 'homepage-header', 750, 323 ); // Soft Crop Mode
 add_image_size( 'singlepost-thumb', 590, 9999 ); // Unlimited Height Mode
+
+$args = array(
+	'flex-width'    => true,
+	'width'         => 360,
+	'flex-height'    => true,
+	'height'        => 150,
+	'default-image' => get_template_directory_uri() . '/assets/images/logo.png',
+);
+add_theme_support( 'custom-header', $args );
 
 function refuge_excerpt_length($length) {
     return 100;

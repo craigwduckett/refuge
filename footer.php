@@ -1,3 +1,4 @@
+	<?php $options = get_option('theme_options'); ?>
 	</div>
 	<footer class="page-footer">
 		<div class="container">
@@ -13,9 +14,9 @@
 				<div class="col-lg-4 col-md-4">
 					<h3>Social</h3>
 					<ul>
-						<li><a href=""><i class="fa fa-facebook-square fa-4x"></i></a></li>
-						<li><a href=""><i class="fa fa-google-plus fa-4x"></i></a></li>
-						<li><a href=""><i class="fa fa-instagram fa-4x"></i></a></li>
+						<li><a href="<?php echo $options['facebookurl']; ?>"><i class="fa fa-facebook-square fa-4x"></i></a></li>
+						<li><a href="<?php echo $options['googleurl']; ?>"><i class="fa fa-google-plus-square fa-4x"></i></a></li>
+						<li><a href="<?php echo $options['instagramurl']; ?>"><i class="fa fa-instagram fa-4x"></i></a></li>
 					</ul>
 				</div>
 			</div>

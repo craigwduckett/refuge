@@ -10,9 +10,9 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> post">
-	<div class="entry-image" style="">
-		<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( the_ID() ), 'single-post-thumbnail' ); ?>" class="lightbox" title="Space shouldn't be the final frontier" rel="bookmark">
-			<?php the_post_thumbnail( 'your-specified-image-size' ); ?> 
+	<div class="entry-image">
+		<a href="<?php the_permalink(); ?>" class="lightbox" title="<?php the_title(); ?>" rel="bookmark">
+			<?php the_post_thumbnail('full', array( 'class' => 'img-responsive' ) ); ?>
 		</a>
 	</div>
 	<div class="entry-container box">
@@ -39,7 +39,7 @@
 				<div class="share-story-container">
 					<h4 class="muted">Share story</h4>
 					<ul class="share-story">
-						
+
 					</ul>
 				</div>
 			</footer>

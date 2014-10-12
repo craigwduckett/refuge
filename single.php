@@ -16,6 +16,7 @@ get_header(); ?>
           <?php endwhile; ?>
           <?php refuge_paging_nav(); ?>
       </div>
+
     </div>
 <?php get_sidebar(); ?>
   </div>
